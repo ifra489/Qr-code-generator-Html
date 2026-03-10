@@ -1,0 +1,82 @@
+<!DOCTYPE html> <html> 
+    <head>
+         <title>QR Code Generator
+
+         </title>
+  <style>
+    body{
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       padding: 40px ;
+       background-color: rgb(63, 63, 63);
+    }
+    label{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        color:white
+    }
+    #text{
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    #submitbtn{
+        margin-top: 20px;
+        padding: 10px;
+       color: azure;
+        background-color: rgb(0, 0, 0);
+        border: 0cap;
+        border-radius: 20px;   
+    }
+#submitbtn:hover{
+    background-color: rgb(255, 253, 253);
+    color:black;
+    cursor: pointer;
+}
+   div{
+    margin-top: 20px;
+    
+   }
+  </style>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js">
+
+     </script>
+     </head> 
+     <body> 
+
+
+<label> Enter Input</label> 
+<input type="text" id= "text"></input> 
+ <button id="submitbtn"> Submit </button> 
+ <div> 
+    <div id="qr-image"/>
+     </div>
+     <script>
+       
+ const submitbtn= document.getElementById("submitbtn");
+  const text=document.getElementById("text"); 
+  submitbtn.addEventListener("click",
+  ()=>{
+    try{
+    const usertext=text.value 
+    if(usertext==="")
+    {
+        alert("Please Enter  Url")
+    }
+    else if(!usertext.startsWith("http")){
+        alert("Please enter a valid URL with https:// or http")
+    }
+   else{
+   new QRCode(document.getElementById("qr-image"), usertext)
+   }
+    }
+    catch(error){
+alert(error.message);
+    }
+ }
+ )
+        
+  </script>
+  </body> 
+  </html> 
