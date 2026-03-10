@@ -19,4 +19,4 @@ A simple QR Code Generator built with HTML, CSS and JavaScript.
 3. Scan the generated QR code!
 
 ## Live Demo
-[Click here](#)
+[Click here](https://ifra489.github.io/Qr-code-generator-Html/)
